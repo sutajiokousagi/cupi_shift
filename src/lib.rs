@@ -106,7 +106,7 @@ extern crate cupi;
 // it accurately represents how they're physically linked together.
 use std::collections::LinkedList;
 use std::cell::RefCell;
-use cupi::{CuPi, PinOutput, DigitalWrite};
+use cupi::{CuPi, PinOutput, DigitalWrite, board};
 
 
 struct ShiftRegister {
@@ -159,6 +159,9 @@ impl Shifter {
     ///
     /// http://pi4j.com/images/j8header-2b-large.png
     pub fn new(data_pin: usize, latch_pin: usize, clock_pin: usize) -> Shifter {
+        //        let board = board();
+        //        println!("inside: {:?}", board);
+        
         let cupi = CuPi::new().unwrap();
         let shift_registers: LinkedList<ShiftRegister> = LinkedList::new();
         Shifter {

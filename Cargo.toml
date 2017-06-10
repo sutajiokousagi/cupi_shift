@@ -15,7 +15,7 @@ exclude       = [
 ]
 
 [dependencies]
-cupi = "0.1.0"
+cupi = { path = "../cupi" }
 
 # This makes smaller files:
 [profile.release]
